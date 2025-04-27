@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="LuxMeet - Encontros de Sugar">
+    <meta name="keywords" content="LuxMeet, sugar daddy, sugar mommy, sugar baby">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxMeet - Encontros de Sugar</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Folhas de Estilo -->
+  <link rel="stylesheet" href="src/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-z4kYwXO1EwPZuBz9Wkl4zXV9ccmgKvZSfm7t87vpoF+9wEh2+/iK6dFjp6mHlZ+zpJ5F5xVYteF4eKsmGcZYRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<!-- Barra de navegação -->
+<div id="nav-header">
+  <img src="file:///C:/Users/Success/Desktop/projetos/MD/img/logo.png" alt="Logo Diamante" class="logo-diamante">
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+ <div class="container2">
+        <h2>Encontros com Elegância</h2>
+        <div class="button-group">
+            <a href="#" class="btn btn-primary glow-on-hover" id="open-cadastro">Cadastre-se Grátis</a>
+            <a href="#" class="btn btn-primary glow-on-hover" id="open-login">Login</a>
+        </div>
+        <p>Descubra uma nova experiência de relacionamentos exclusivos.</p>
+    </div>
+</section>
+<!-- Modal para Cadastro -->
+  <!-- Modal para Cadastro -->
+  <div id="cadastro-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Cadastro</h2>
+      <form id="cadastro-form">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" required>
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" required>
+
+        <label for="date_of_birth">Data de Nascimento:</label>
+        <input type="date" id="date_of_birth" required>
+
+        <label for="gender">Gênero:</label>
+        <select id="gender" required>
+          <option value="male">Masculino</option>
+          <option value="female">Feminino</option>
+        </select>
+
+        <label for="tipouser">Tipo de Usuário:</label>
+        <select id="tipouser" onchange="toggleInterestFields()" required>
+          <option value="sugar_daddy">Sugar Daddy</option>
+          <option value="sugar_mommy">Sugar Mommy</option>
+          <option value="sugar_baby">Sugar Baby</option>
+        </select>
+
+        <div id="interestFields">
+          <label for="interest_in">Interesse em:</label>
+          <select id="interest_in">
+            <option value="sugar_daddy">Sugar Daddy</option>
+            <option value="sugar_mommy">Sugar Mommy</option>
+          </select>
+        </div>
+
+        <label for="income">Renda:</label>
+        <input type="text" id="income" required>
+
+        <label for="bio">Biografia:</label>
+        <textarea id="bio" required></textarea>
+
+        <label for="profile_photo">Foto de Perfil:</label>
+        <input type="file" id="profile_photo" accept="image/*" required>
+
+        <button type="submit" class="submit-button">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+
+<!-- Modal para Login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="login-form">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="login-email" required>
+
+                <label for="login-password">Senha:</label>
+                <input type="password" id="login-password" name="login-password" required>
+
+                <button type="submit" class="btn btn-primary glow-on-hover">Login</button>
+            </form>
+        </div>
+    </div>
+
+<!-- Sobre Section -->
+<section class="about">
+  <div class="container4">
+    <h2>Sobre o LuxMeet</h2>
+    <p>O LuxMeet oferece uma plataforma premium para sugar daddies e sugar mommies encontrarem seus parceiros ideais.</p>
+  </div>
+</section>
+
+<!-- Seção de Recursos -->
+<section class="features">
+  <div class="container5">
+    <h2>Recursos Exclusivos</h2>
+    <div class="feature">
+      <i class="fas fa-check-circle"></i>
+      <p>Verificação de perfis para autenticidade.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-shield-alt"></i>
+      <p>Segurança e privacidade em primeiro lugar.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-globe"></i>
+      <p>Plataforma global para conexões sofisticadas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container6">
+    <p>&copy; 2024 LuxMeet. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+<!-- JavaScript para interatividade -->
+<script src="src/script.js"></script>
+
+
+</body>
+</html>
