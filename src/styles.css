@@ -1,0 +1,823 @@
+/* Reset básico */
+* {	width:100%;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  margin: 0;
+  height: 100%; /* Garante que o corpo ocupe toda a altura da janela */
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #000000;
+  overflow-x: hidden; /* Remove o scroll horizontal */
+  overflow-y: auto; /* Mantém o scroll vertical */
+  position: relative; /* Para posicionamento absoluto dos elementos pseudo */
+  border: 2px solid transparent; /* Borda inicialmente transparente */
+  border-image: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000) 1; /* Imagem da borda como gradiente */
+  border-image-slice: 1; /* Fatia única para a borda */
+  flex-direction: column; /* Organiza os elementos em coluna */
+
+}
+
+/* Pseudo-elemento para o efeito de rotação */
+body::before {
+  content: '';
+  position: absolute;
+  top: -2px; /* Ajuste fino para alinhar perfeitamente */
+  left: -2px; /* Ajuste fino para alinhar perfeitamente */
+  right: -2px; /* Ajuste fino para alinhar perfeitamente */
+  bottom: -2px; /* Ajuste fino para alinhar perfeitamente */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: 9999;
+  pointer-events: none; /* Para não interferir com interações de usuário */
+  animation: rotateBorder 10s linear infinite;
+}
+
+/* Animação da rotação */
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.container1, .container3, .container4, .container5, .container6 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+    padding-top: 50px; /* Espaço para a logo não colar no topo */
+
+  position: relative; /* Necessário para posicionar a logo absolutamente */
+
+}
+
+.logo-diamante {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px; /* Ajuste conforme necessário */
+  height: auto; /* Mantém proporções */
+  z-index: 2000;
+}
+.container2 {
+    text-align: center;
+    color: #ffd700; /* Dourado */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffd700; /* Dourado */
+    background: linear-gradient(to right, #77530a, #ffd700, #77530a);
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #ffd700, #77530a, #ffd700);
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* Estilos de formulário dourado */
+.form-card { 
+    width: 300px;
+    margin: auto;
+    background-image: linear-gradient(163deg, #FFD700 0%, #FFD700 100%);
+    border-radius: 25px;
+    transition: all .3s;
+}
+
+.form-card-2 {
+    border-radius: 0;
+    transition: all .2s;
+}
+
+.form-card-2:hover {
+    transform: scale(0.99);
+    border-radius: 25px;
+}
+
+.form-card:hover { box-shadow: 0px 0px 30px 1px rgba(255, 215, 0, 0.3); }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2em;
+    background-color: #171717;
+    border-radius: 25px;
+}
+
+.title-login {
+    text-align: center;
+    margin: 2em;
+    color: #FFD700;
+    font-size: 1.2em;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: #FFD700; 
+    background-color: #171717;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-icon {
+    width: 1.3em;
+    height: 1.3em;
+    color: #FFF;
+    margin-left: 10px;
+}
+
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #FFF;
+}
+
+.input-field:hover  { color: #FFD700; }
+
+.form .box-btn {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    margin: 25px 0;
+    padding: 0 5px;
+}
+
+.btn-login {
+    width: 50%;
+    background-image:linear-gradient(150deg, #FFD700 0%, #FFD700 100%); 
+    color: #FFF;
+    text-decoration: none;
+    padding: 0.4em 1em;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .4s;
+    font-size: 0.9em;
+    float: left;
+    margin-right: 5%;
+}
+
+.btn-login:nth-of-type(2n+0) { margin-right:0; }
+.btn-login:hover { background-image: linear-gradient(150deg, #FFD700 0%, #77530a 100%); color: #FFF; }
+
+
+
+
+.container2 h2{
+	
+	text-shadow: -1.91px -0.60px #929292,
+  -5.73px -1.79px #929292;
+	
+}
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+
+/* Header */
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+/* Centraliza o logotipo no topo do cabeçalho de navegação */
+#nav-header {
+  display: flex;
+  width250px;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Ajuste conforme necessário */
+  background-color: #fff; /* Ajuste conforme necessário */
+}
+
+
+
+
+header .logo {
+  font-size: 1.5em;
+  margin-left: 20px;
+}
+
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+  color: #fff;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  text-align: center;
+  padding: 20px;
+  width: 100%; /* Garante que a largura seja 100% */
+  overflow: hidden; /* Previne scroll horizontal */
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  word-wrap: break-word; /* Garante quebra de linha para texto grande */
+}
+
+.hero p {
+  font-size: 30px;
+  word-wrap: break-word; /* Garante quebra de linha para texto grande */
+}
+
+.button-group {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.button-group .btn {
+  background: #ffd700; /* Cor dourada */
+  color: #ffd700; /* Cor do texto */
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: none;
+  width:auto;
+  item-align:center;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.button-group .btn:hover {
+  background: #e6c300; /* Cor dourada mais escura no hover */
+}
+
+.button-group .btn-outline {
+  background: none;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.button-group .btn-outline:hover {
+  background: #fff;
+  color: #333;
+}
+
+/* Formulários */
+.forms {
+  background: #fff;
+  padding: 40px 20px;
+  width: 100%; /* Garante que a largura seja 100% */
+  overflow: hidden; /* Previne scroll horizontal */
+}
+
+form {
+  background: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Garante que a largura seja 100% */
+  overflow: hidden; /* Previne scroll horizontal */
+}
+
+form h3 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group input[type="file"] {
+  padding: 0;
+}
+
+.form-group button {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.form-group button:hover {
+  background: #555;
+}
+
+.btn-cancelar {
+  background: #e8491d;
+  margin-left: 10px;
+}
+
+.btn-cancelar:hover {
+  background: #c43713;
+}
+
+/* Sobre Section */
+.about {
+  background: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%; /* Garante que a largura seja 100% */
+  overflow: hidden; /* Previne scroll horizontal */
+}
+
+.about h2 {
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.5em;
+}
+
+/* Features Section */
+.features {
+  background: #333;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%; /* Garante que a largura seja 100% */
+  overflow: hidden; /* Previne scroll horizontal */
+}
+
+.features h2 {
+  margin-bottom: 20px;
+}
+
+.features .feature {
+  margin-bottom: 20px;
+}
+
+.features .feature i {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%; /* Garante que a largura seja 100% */
+  overflow: hidden; /* Previne scroll horizontal */
+}
+
+.glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  line-height: 50px;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+#nav-header-buttons {
+  flex-wrap: nowrap; /* Impede que os botões quebrem para a próxima linha */
+  overflow-x: auto; /* Adiciona um scroll horizontal se houver mais botões */
+  gap: 10px; /* Espaçamento entre os botões */
+  padding-bottom: 10px; /* Adiciona espaço na parte inferior para a rolagem horizontal */
+}
+
+/* Estilo para cada botão de navegação */
+#nav-header-buttons button {
+  background-color: #ffd700; /* Cor de fundo dourada */
+  color: #ffd700; /* Cor do texto */
+  border: none; /* Remove a borda */
+  height: 50px; /* Altura dos botões */
+  text-align: center; /* Alinhamento do texto */
+  text-decoration: none; /* Remove a decoração de texto */
+  display: inline-flex; /* Exibe como um bloco flexível */
+  align-items: center; /* Alinha itens verticalmente */
+  justify-content: center; /* Alinha itens horizontalmente */
+  font-size: 25px; /* Tamanho da fonte */
+  margin: 2px 1px; /* Margem externa */
+  cursor: pointer; /* Cursor ao passar por cima */
+  border-radius: 20px; /* Borda arredondada */
+  transition-duration: 0.4s; /* Duração da transição */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+#nav-header-buttons button:hover {
+  background-color: #e6c300; /* Cor de fundo dourada mais escura no hover */
+  transform: translateY(-2px); /* Deslocamento para cima */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+}
+
+#nav-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffd700; /* Cor dourada para o texto do cabeçalho */
+  position: fixed;
+  width: 100%;
+  height:180px;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  border-bottom: 2px solid black;
+  overflow: hidden; /* Adiciona overflow:hidden para esconder o gradiente */
+  background: linear-gradient(rgba(255, 215, 0, 0.85), rgba(0, 0, 0, 0.23)); /* Gradiente dourado */
+}
+
+	
+/* Ajuste para a seção 'Sobre' */
+.about {
+  background: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%; /* Garante que a largura seja 100% */
+  overflow: hidden; /* Previne scroll horizontal */
+}
+
+.about h2 {
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.5em;
+}
+
+p {
+	
+	  font-size: 1.5em;
+
+}
+/* Ajuste para a seção 'Features' */
+.features {
+  background: #333;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%; /* Garante que a largura seja 100% */
+  overflow: hidden; /* Previne scroll horizontal */
+}
+
+.features h2 {
+  margin-bottom: 20px;
+}
+
+.features .feature {
+  margin-bottom: 20px;
+}
+
+.features .feature i {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Ajuste para o rodapé (footer) */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%; /* Garante que a largura seja 100% */
+  overflow: hidden; /* Previne scroll horizontal */
+}
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+    color: #ffd700; /* Dourado */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-content label {
+    font-weight: bold;
+    color: #ffd700; /* Dourado */
+}
+
+.modal-content input[type="email"],
+.modal-content input[type="password"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #555;
+    color: #fff;
+    outline: none;
+}
+
+.modal-content input[type="email"]::placeholder,
+.modal-content input[type="password"]::placeholder {
+    color: #bbb;
+}
+
+.modal-content input[type="email"]:focus,
+.modal-content input[type="password"]:focus {
+    background: #666;
+}
+
+.modal-content .btn-primary {
+    margin-top: 20px;
+}
+
+.glow-on-hover {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00f5);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.open-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+input, select, textarea {
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: none;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
